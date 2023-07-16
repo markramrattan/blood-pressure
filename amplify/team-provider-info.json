@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-bloodpressure-staging-200521-authRole",
+      "UnauthRoleArn": "arn:aws:iam::378294753609:role/amplify-bloodpressure-staging-200521-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::378294753609:role/amplify-bloodpressure-staging-200521-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-bloodpressure-staging-200521-deployment",
+      "UnauthRoleName": "amplify-bloodpressure-staging-200521-unauthRole",
+      "StackName": "amplify-bloodpressure-staging-200521",
+      "StackId": "arn:aws:cloudformation:eu-west-1:378294753609:stack/amplify-bloodpressure-staging-200521/c39e96a0-2281-11ee-a7aa-0acaf37c0d17",
+      "AmplifyAppId": "dh3lfluvxwzco"
+    },
+    "categories": {
+      "auth": {
+        "BloodPressure": {}
+      }
+    }
+  }
+}

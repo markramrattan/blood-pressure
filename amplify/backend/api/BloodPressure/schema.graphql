@@ -1,0 +1,8 @@
+type BloodPressure @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  date: AWSDate!
+  systolic: Int!
+  diastolic: Int!
+  pulse: Int!
+}
+ 
