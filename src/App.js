@@ -7,13 +7,15 @@ import {
   Image,
   Badge
 } from "@aws-amplify/ui-react";
-import { ItemCardCollection, BloodPressureCreateForm } from "./ui-components";
+import { ItemCardCollection, BloodPressureCreateForm,BloodPressureUpdateForm  } from "./ui-components";
+
 import { useState } from "react";
 import Chart from "./Chart"
 import logo from './main.png'
 
-function App({ signOut, user }) {
+function App({ signOut, user, item }) {
   const [createEntry, setEntry] = useState();
+  const [updateBloodPressure, setUpdatedBloodPressure] = useState()
 
   return (
     <div>
@@ -41,7 +43,12 @@ function App({ signOut, user }) {
             onSuccess={() => setEntry(false)}
           />
         ) : (
-          <ItemCardCollection />
+          <div>
+          <BloodPressureUpdateForm bloodPressure={updateBloodPressure} />
+          <ItemCardCollection overrideItems={({item}) => ({
+            onClick: ()=> setUpdatedBloodPressure(item)
+          })} />
+          </div>
         )}
       </Flex>
       <Badge>Account: {user.attributes.email}</Badge>
