@@ -35,7 +35,7 @@ export default function ItemCardCollection(props) {
       type="grid"
       searchPlaceholder="Search..."
       itemsPerPage={6}
-      templateColumns="1fr 1fr"
+      templateColumns="1fr 1fr 1fr"
       autoFlow="row"
       alignItems="stretch"
       justifyContent="stretch"

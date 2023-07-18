@@ -6,16 +6,27 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import { BloodPressure } from "../models";
+import {
+  getOverrideProps,
+  useDataStoreDeleteAction,
+} from "@aws-amplify/ui-react/internal";
+import { schema } from "../models/schema";
 import { Badge, Flex, Text } from "@aws-amplify/ui-react";
+import MyIcon from "./MyIcon";
 export default function ItemCard(props) {
   const { bloodPressure, overrides, ...rest } = props;
+  const frameFourOneNineOnClick = useDataStoreDeleteAction({
+    model: BloodPressure,
+    id: bloodPressure?.id,
+    schema: schema,
+  });
   return (
     <Flex
       gap="16px"
       direction="column"
-      width="unset"
-      height="113px"
+      width="218px"
+      height="126px"
       justifyContent="center"
       alignItems="center"
       position="relative"
@@ -30,7 +41,7 @@ export default function ItemCard(props) {
         width="169px"
         height="46px"
         justifyContent="space-between"
-        alignItems="flex-start"
+        alignItems="center"
         shrink="0"
         position="relative"
         padding="0px 0px 0px 0px"
@@ -115,11 +126,11 @@ export default function ItemCard(props) {
         ></Text>
       </Flex>
       <Flex
-        gap="0"
+        gap="8px"
         direction="row"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
+        width="125px"
+        height="26px"
+        justifyContent="center"
         alignItems="center"
         shrink="0"
         position="relative"
@@ -130,13 +141,44 @@ export default function ItemCard(props) {
           width="unset"
           height="unset"
           gap="0"
-          padding="6px 50px 6px 50px"
+          justifyContent="flex-start"
+          padding="6px 42px 6px 42px"
           shrink="0"
           size="small"
           variation="success"
           children={bloodPressure?.date}
           {...getOverrideProps(overrides, "Badge")}
         ></Badge>
+        <Flex
+          gap="20px"
+          direction="row"
+          width="24px"
+          height="26px"
+          justifyContent="center"
+          alignItems="center"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          onClick={() => {
+            frameFourOneNineOnClick();
+          }}
+          {...getOverrideProps(overrides, "Frame 419")}
+        >
+          <MyIcon
+            width="24px"
+            height="26px"
+            display="block"
+            gap="unset"
+            alignItems="unset"
+            justifyContent="unset"
+            overflow="hidden"
+            shrink="0"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            type="delete"
+            {...getOverrideProps(overrides, "MyIcon")}
+          ></MyIcon>
+        </Flex>
       </Flex>
     </Flex>
   );

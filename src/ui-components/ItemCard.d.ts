@@ -8,6 +8,7 @@ import * as React from "react";
 import { BloodPressure } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { BadgeProps, FlexProps, TextProps } from "@aws-amplify/ui-react";
+import { MyIconProps } from "./MyIcon";
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type ItemCardOverridesProps = {
     "140"?: PrimitiveOverrideProps<TextProps>;
@@ -18,6 +19,8 @@ export declare type ItemCardOverridesProps = {
     "8029766850"?: PrimitiveOverrideProps<TextProps>;
     "Frame 418"?: PrimitiveOverrideProps<FlexProps>;
     Badge?: PrimitiveOverrideProps<BadgeProps>;
+    "Frame 419"?: PrimitiveOverrideProps<FlexProps>;
+    MyIcon?: MyIconProps;
 } & EscapeHatchProps;
 export declare type ItemCardProps = React.PropsWithChildren<Partial<FlexProps> & {
     bloodPressure?: BloodPressure;

@@ -7,15 +7,15 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Button, Flex, Image, Rating, Text } from "@aws-amplify/ui-react";
+import { Button, Flex, Text } from "@aws-amplify/ui-react";
 export default function ActionCard(props) {
   const { overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
       direction="column"
-      width="320px"
-      height="unset"
+      width="200px"
+      height="231px"
       justifyContent="center"
       alignItems="flex-start"
       position="relative"
@@ -24,20 +24,6 @@ export default function ActionCard(props) {
       {...getOverrideProps(overrides, "ActionCard")}
       {...rest}
     >
-      <Image
-        width="unset"
-        height="408px"
-        display="block"
-        gap="unset"
-        alignItems="unset"
-        justifyContent="unset"
-        shrink="0"
-        alignSelf="stretch"
-        position="relative"
-        padding="0px 0px 0px 0px"
-        objectFit="cover"
-        {...getOverrideProps(overrides, "image")}
-      ></Image>
       <Flex
         gap="16px"
         direction="column"
@@ -83,8 +69,8 @@ export default function ActionCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Classic Long Sleeve T-Shirt"
-            {...getOverrideProps(overrides, "Classic Long Sleeve T-Shirt")}
+            children="Delete this Reading"
+            {...getOverrideProps(overrides, "Delete this Reading")}
           ></Text>
           <Text
             fontFamily="Inter"
@@ -106,39 +92,24 @@ export default function ActionCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Information about this product"
-            {...getOverrideProps(overrides, "Information about this product")}
+            children="You’re about to delete a reading"
+            {...getOverrideProps(
+              overrides,
+              "You\u2019re about to delete a reading"
+            )}
           ></Text>
         </Flex>
-        <Rating
-          width="174px"
-          height="unset"
-          shrink="0"
-          size="default"
-          {...getOverrideProps(overrides, "Rating")}
-        ></Rating>
-        <Text
-          fontFamily="Inter"
-          fontSize="20px"
-          fontWeight="700"
-          color="rgba(13,26,38,1)"
-          lineHeight="25px"
-          textAlign="left"
-          display="block"
-          direction="column"
-          justifyContent="unset"
+        <Button
           width="unset"
           height="unset"
-          gap="unset"
-          alignItems="unset"
           shrink="0"
           alignSelf="stretch"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children="$99 USD"
-          {...getOverrideProps(overrides, "$99 USD")}
-        ></Text>
+          size="large"
+          isDisabled={false}
+          variation="default"
+          children="Cancel"
+          {...getOverrideProps(overrides, "Button29766759")}
+        ></Button>
         <Button
           width="unset"
           height="unset"
@@ -147,8 +118,8 @@ export default function ActionCard(props) {
           size="large"
           isDisabled={false}
           variation="primary"
-          children="Button"
-          {...getOverrideProps(overrides, "Button")}
+          children="Delete"
+          {...getOverrideProps(overrides, "Button38693362")}
         ></Button>
       </Flex>
     </Flex>
