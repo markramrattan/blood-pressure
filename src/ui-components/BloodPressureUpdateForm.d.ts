@@ -41,6 +41,7 @@ export declare type BloodPressureUpdateFormProps = React.PropsWithChildren<{
     onSubmit?: (fields: BloodPressureUpdateFormInputValues) => BloodPressureUpdateFormInputValues;
     onSuccess?: (fields: BloodPressureUpdateFormInputValues) => void;
     onError?: (fields: BloodPressureUpdateFormInputValues, errorMessage: string) => void;
+    onCancel?: () => void;
     onChange?: (fields: BloodPressureUpdateFormInputValues) => BloodPressureUpdateFormInputValues;
     onValidate?: BloodPressureUpdateFormValidationValues;
 } & React.CSSProperties>;

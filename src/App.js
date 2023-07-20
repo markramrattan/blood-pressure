@@ -1,57 +1,57 @@
+import { Flex, withAuthenticator, Badge } from "@aws-amplify/ui-react";
 import {
-  Flex,
-  Heading,
-  Button,
-  Divider,
-  withAuthenticator,
-  Image,
-  Badge
-} from "@aws-amplify/ui-react";
-import { ItemCardCollection, BloodPressureCreateForm,BloodPressureUpdateForm  } from "./ui-components";
+  ItemCardCollection,
+  BloodPressureCreateForm,
+  BloodPressureUpdateForm,
+} from "./ui-components";
 
 import { useState } from "react";
-import Chart from "./Chart"
-import logo from './main.png'
+import Chart from "./Chart";
+import Nav from "./Nav";
 
-function App({ signOut, user, item }) {
+function App({ signOut, user }) {
   const [createEntry, setEntry] = useState();
-  const [updateBloodPressure, setUpdatedBloodPressure] = useState()
+  const [createUpdate, setUpdate] = useState();
+  const [updateBloodPressure, setUpdatedBloodPressure] = useState();
 
   return (
-    <div>
-      <Flex direction="row">
-      <Image
-      src={logo}
-      alt="Blood Pressure Monitor"
-      height="60px"
-    />
-      <Heading level={2}>Blood Pressure Monitor</Heading>
-        <Button onClick={signOut}>Sign Out</Button>
-      </Flex>
-      <Divider size="large" orientation="horizontal" padding="1em" />
-      <Flex direction="column">
-        
-       
-        <Button onClick={() => setEntry(true)}>
-          Add Blood Pressure Reading
-        </Button>
-        <Chart/>
-        
+    <div className="container mx-auto p-4">
+      <Nav signOut={signOut} setEntry={setEntry} />
+
+      <Flex className="pt-4" direction="column">
         {createEntry ? (
-          <BloodPressureCreateForm
-            onCancel={() => setEntry(false)}
-            onSuccess={() => setEntry(false)}
-          />
+          <div>
+            <BloodPressureCreateForm
+              className="mb-8 "
+              onCancel={() => setEntry(false)}
+              onSuccess={() => setEntry(false)}
+            />
+            <Chart />
+          </div>
         ) : (
           <div>
-          <BloodPressureUpdateForm bloodPressure={updateBloodPressure} />
-          <ItemCardCollection overrideItems={({item}) => ({
-            onClick: ()=> setUpdatedBloodPressure(item)
-          })} />
+            <Chart />
+
+            <ItemCardCollection
+              className="my-8 mt-12"
+              onClick={() => setUpdate(true)}
+              overrideItems={({ item }) => ({
+                onClick: () => setUpdatedBloodPressure(item),
+              })}
+            />
           </div>
         )}
+
+        {createUpdate ? (
+          <BloodPressureUpdateForm
+            onCancel={() => setUpdate(false)}
+            bloodPressure={updateBloodPressure}
+          />
+        ) : (
+          <p></p>
+        )}
       </Flex>
-      <Badge>Account: {user.attributes.email}</Badge>
+      <Badge className="my-12">Account: {user.attributes.email}</Badge>
     </div>
   );
 }

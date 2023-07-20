@@ -30,7 +30,8 @@ export default function ItemCard(props) {
       justifyContent="center"
       alignItems="center"
       position="relative"
-      padding="16px 16px 16px 16px"
+      border="1px SOLID rgba(172,172,172,1)"
+      padding="15px 15px 15px 15px"
       backgroundColor="rgba(255,255,255,1)"
       {...getOverrideProps(overrides, "ItemCard")}
       {...rest}
@@ -142,7 +143,6 @@ export default function ItemCard(props) {
           height="unset"
           gap="0"
           justifyContent="flex-start"
-          padding="6px 42px 6px 42px"
           shrink="0"
           size="small"
           variation="success"
