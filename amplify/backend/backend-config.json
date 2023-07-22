@@ -1,4 +1,10 @@
 {
+  "analytics": {
+    "bloodpressure": {
+      "providerPlugin": "awscloudformation",
+      "service": "Pinpoint"
+    }
+  },
   "api": {
     "BloodPressure": {
       "dependsOn": [

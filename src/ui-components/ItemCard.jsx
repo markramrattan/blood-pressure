@@ -17,17 +17,17 @@ import MyIcon from "./MyIcon";
 export default function ItemCard(props) {
   const { bloodPressure, overrides, ...rest } = props;
   const frameFourOneNineOnClick = useDataStoreDeleteAction({
-    model: BloodPressure,
     id: bloodPressure?.id,
+    model: BloodPressure,
     schema: schema,
   });
   return (
     <Flex
-      gap="16px"
+      gap="0"
       direction="column"
       width="218px"
       height="126px"
-      justifyContent="center"
+      justifyContent="flex-start"
       alignItems="center"
       position="relative"
       border="1px SOLID rgba(172,172,172,1)"
@@ -39,8 +39,8 @@ export default function ItemCard(props) {
       <Flex
         gap="0"
         direction="row"
-        width="169px"
-        height="46px"
+        width="216px"
+        height="53px"
         justifyContent="space-between"
         alignItems="center"
         shrink="0"
@@ -51,27 +51,28 @@ export default function ItemCard(props) {
         <Flex
           gap="0"
           direction="column"
-          width="113px"
-          height="46px"
-          justifyContent="flex-start"
-          alignItems="flex-start"
+          width="105px"
+          height="68px"
+          justifyContent="center"
+          alignItems="flex-end"
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
+          backgroundColor="rgba(238,238,238,1)"
           {...getOverrideProps(overrides, "Product Title")}
         >
           <Text
             fontFamily="Inter"
-            fontSize="24px"
+            fontSize="32px"
             fontWeight="700"
             color="rgba(13,26,38,1)"
             lineHeight="20px"
-            textAlign="left"
+            textAlign="right"
             display="block"
             direction="column"
             justifyContent="unset"
-            width="113px"
-            height="25px"
+            width="96px"
+            height="28.17px"
             gap="unset"
             alignItems="unset"
             shrink="0"
@@ -83,17 +84,17 @@ export default function ItemCard(props) {
           ></Text>
           <Text
             fontFamily="Inter"
-            fontSize="24px"
-            fontWeight="600"
-            color="rgba(48,64,80,1)"
+            fontSize="32px"
+            fontWeight="500"
+            color="rgba(32,125,218,1)"
             lineHeight="24px"
-            textAlign="left"
+            textAlign="right"
             display="block"
             direction="column"
             justifyContent="unset"
-            letterSpacing="0.09px"
-            width="unset"
-            height="unset"
+            letterSpacing="0.17px"
+            width="92px"
+            height="26px"
             gap="unset"
             alignItems="unset"
             shrink="0"
@@ -106,16 +107,16 @@ export default function ItemCard(props) {
         </Flex>
         <Text
           fontFamily="Inter"
-          fontSize="28px"
+          fontSize="36px"
           fontWeight="800"
-          color="rgba(13,26,38,1)"
+          color="rgba(4,52,149,1)"
           lineHeight="20px"
           textAlign="center"
           display="block"
           direction="column"
           justifyContent="unset"
-          width="39px"
-          height="44px"
+          width="76px"
+          height="53px"
           gap="unset"
           alignItems="unset"
           shrink="0"
@@ -129,18 +130,18 @@ export default function ItemCard(props) {
       <Flex
         gap="8px"
         direction="row"
-        width="125px"
-        height="26px"
-        justifyContent="center"
+        width="216px"
+        height="56px"
+        justifyContent="flex-start"
         alignItems="center"
         shrink="0"
         position="relative"
-        padding="0px 0px 0px 0px"
+        padding="0px 8px 0px 8px"
         {...getOverrideProps(overrides, "Frame 418")}
       >
         <Badge
-          width="unset"
-          height="unset"
+          width="98px"
+          height="24px"
           gap="0"
           justifyContent="flex-start"
           shrink="0"
@@ -150,11 +151,11 @@ export default function ItemCard(props) {
           {...getOverrideProps(overrides, "Badge")}
         ></Badge>
         <Flex
-          gap="20px"
+          gap="10px"
           direction="row"
-          width="24px"
-          height="26px"
-          justifyContent="center"
+          width="94px"
+          height="21px"
+          justifyContent="flex-end"
           alignItems="center"
           shrink="0"
           position="relative"

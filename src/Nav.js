@@ -11,15 +11,20 @@ export default function Nav({ signOut, setEntry }) {
             className="animate-pulse h-14 mr-3"
             alt="Blood Pressure Monitor"
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap mr-3">
+          <span className="self-center text-2xl font-semibold  mr-3">
             Blood Pressure Monitor
           </span>
         </a>
 
         <div className="w-full md:block md:w-auto">
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
+          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 gap-4 ">
             <li>
-              <Button onClick={() => setEntry(true)}>
+              <Button
+                onClick={() => setEntry(true)}
+                data-amplify-analytics-on="click"
+                data-amplify-analytics-name="click"
+                data-amplify-analytics-attrs="attr1:attr1_value,attr2:attr2_value"
+              >
                 Add Blood Pressure Reading
               </Button>
             </li>

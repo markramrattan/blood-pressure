@@ -1,0 +1,21 @@
+{
+    "appName": "bloodpressure",
+    "roleName": "pinpointLambdaRole106800e3",
+    "cloudformationPolicyName": "cloudformationPolicy106800e3",
+    "cloudWatchPolicyName": "cloudWatchPolicy106800e3",
+    "pinpointPolicyName": "pinpointPolicy106800e3",
+    "authPolicyName": "pinpoint_amplify_106800e3",
+    "unauthPolicyName": "pinpoint_amplify_106800e3",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}
