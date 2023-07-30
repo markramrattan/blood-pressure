@@ -1,5 +1,7 @@
 import logo from "./main.png";
 import { Button, Image } from "@aws-amplify/ui-react";
+import { BiSolidHelpCircle} from "react-icons/bi";
+
 
 export default function Nav({ signOut, setEntry }) {
   return (
@@ -28,8 +30,13 @@ export default function Nav({ signOut, setEntry }) {
                 Add Blood Pressure Reading
               </Button>
             </li>
+           
+            
             <li>
               <Button onClick={signOut}>Sign Out</Button>
+            </li>
+            <li><a href="https://twitter.com/markramrattan" target="blank">
+            <BiSolidHelpCircle size={40}/></a>
             </li>
           </ul>
         </div>
