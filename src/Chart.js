@@ -9,7 +9,7 @@ import {
   Legend,
   ResponsiveContainer,
   LabelList,
-  Brush
+  Brush,
 } from "recharts";
 import { BloodPressure } from "./models";
 import { SortDirection } from "@aws-amplify/datastore";
@@ -48,25 +48,32 @@ export default function Chart(props) {
           <YAxis />
           <Tooltip />
           <Legend />
-          
-          <Bar dataKey="systolic" fill="#8884d8"  >
-        
-          <LabelList className="font-bold text-xl text-red-500" dataKey="systolic" position="top" />
+
+          <Bar dataKey="systolic" fill="#8884d8">
+            <LabelList
+              className="font-bold text-xl text-red-500"
+              dataKey="systolic"
+              position="top"
+            />
           </Bar>
           <Bar dataKey="diastolic" fill="#82ca9d">
-          <LabelList className="font-bold text-xl text-red-500" dataKey="diastolic" position="top" />
+            <LabelList
+              className="font-bold text-xl text-red-500"
+              dataKey="diastolic"
+              position="top"
+            />
           </Bar>
-         
+
           <Bar dataKey="pulse" fill="#ffcc00">
-          <LabelList className="font-bold text-xl text-red-500" dataKey="pulse" position="top" />
-         
-         
+            <LabelList
+              className="font-bold text-xl text-red-500"
+              dataKey="pulse"
+              position="top"
+            />
           </Bar>
           <Brush dataKey="date" width="80%" height={40} stroke="#8884d8" />
         </BarChart>
-        
       </ResponsiveContainer>
-    
     </div>
   );
 }

@@ -77,11 +77,16 @@ function App({ signOut, user }) {
         )}
       </Flex>
       <div className="mt-12">
-        <Image
-          src="https://www.nhs.uk/nhscwebservices/documents/logo1.jpg"
-          alt="NHS Website"
-          width="300px"
-        />
+        <a
+          href="https://www.nhs.uk/conditions/high-blood-pressure-hypertension/"
+          target="blank"
+        >
+          <Image
+            src="https://www.nhs.uk/nhscwebservices/documents/logo1.jpg"
+            alt="NHS Website"
+            width="300px"
+          />
+        </a>
       </div>
       <div>
         <Badge className="my-12">Account: {user.attributes.email}</Badge>
